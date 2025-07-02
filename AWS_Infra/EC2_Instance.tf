@@ -1,4 +1,5 @@
 resource "aws_instance" "my-ec2" {
+   count = "${var.instance_count}"
    ami = var.ami_id
    instance_type = var.ec2_instance
    key_name = aws_key_pair.my-pub-key.key_name # Change accorindly
